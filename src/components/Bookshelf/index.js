@@ -13,7 +13,7 @@ const Bookshelf = ({shelfs, books, onUpdateBook}) => {
                 <div key={shelf.value} className="bookshelf">
                     <h2 className="bookshelf-title">{shelf.name}</h2>
                     <div className="bookshelf-books">
-                        <BooksGrid books={books.filter(_ => _.shelf === shelf.value)} onUpdateBook={onUpdateBook} />
+                        <BooksGrid books={books.filter(_ => _.shelf === shelf.value)} onUpdateBook={onUpdateBook} prev="list" />
                     </div>
                 </div>
             ))

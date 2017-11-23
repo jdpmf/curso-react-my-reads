@@ -1,0 +1,35 @@
+.close-details {
+    display: block;
+    top: 20px;
+    left: 15px;
+    width: 50px;
+    height: 53px;
+    background-image: url('../../utils/icons/arrow-back-white.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    font-size: 0;
+  }
+
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .items {
+      text-align: left;
+      padding-left: 200px;
+  }
+
+  .photo {
+      position: absolute;
+      float: right;
+      margin-left: 40px;
+  }
+
+  .description {
+      text-align: justify;
+      margin-top: 80px;
+      margin-left: 40px;
+      margin-right: 40px;
+  }

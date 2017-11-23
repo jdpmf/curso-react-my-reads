@@ -53,7 +53,7 @@ export class SearchBooks extends Component {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <BooksGrid books={showingBooks} onUpdateBook={this.props.onUpdateBook}/>
+                    <BooksGrid books={showingBooks} onUpdateBook={this.props.onUpdateBook} prev="search"/>
                 </div>
             </div>
         )

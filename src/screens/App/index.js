@@ -2,6 +2,7 @@ import React from 'react'
 import {Route} from 'react-router-dom'
 import ListBooks from '../ListBooks'
 import SearchBook from '../SearchBooks'
+import DetailsBook from '../DetailsBook'
 import * as BooksAPI from '../../utils/BooksAPI'
 import './index.css'
 
@@ -41,6 +42,10 @@ class BooksApp extends React.Component {
         <Route path="/search" render={() => (
           <SearchBook books={this.state.books} onUpdateBook={this.updateBook} />
         )}/>
+
+        <Route path="/details/:prev/:id" render={(props) => (
+          <DetailsBook {...props} books={this.state.books} />
+        )} />
 
       </div>
     )

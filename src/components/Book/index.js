@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
-const Book = ({book, onUpdateBook}) => {
+const Book = ({book, onUpdateBook, prev}) => {
+
+    const path = `/details/${prev}/${book.id}`
 
     return (
         <div className="book">
             <div className="book-top">
+            <Link to={path}>
                 <div
                     className="book-cover"
                     style={{
                     width: 128,
                     height: 193,
                     backgroundImage: `url(${book.imageLinks.smallThumbnail})`
-                }}></div>
+                }}></div> </Link>
                 <div className="book-shelf-changer">
                     <select value={book.shelf} onChange={(event) => onUpdateBook(book, event.target.value)}>
                         <option value="none" disabled>Move to...</option>
@@ -32,7 +36,8 @@ const Book = ({book, onUpdateBook}) => {
 Book.propTypes = {
 
     book: PropTypes.object.isRequired,
-    onUpdateBook: PropTypes.func.isRequired
+    onUpdateBook: PropTypes.func.isRequired,
+    prev: PropTypes.string.isRequired
 
 }
 
