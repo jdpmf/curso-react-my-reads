@@ -5,11 +5,11 @@ Primeiro projeto do curso de React da Udacity, o projeto é uma lista de livros 
 ## Install
 
 Para instalar e inicializar o projeto, basta ir no seu terminal e escrever os seguintes códigos
-<code>
+<pre><code>
     git clone https://github.com/jessicadellisola/curso-react-my-reads
     cd curso-react-my-reads
     npm install
     npm start
-</code>
+</code></pre>
 
 Fazendo isso, abrirá uma janela no seu navegador padrão com o projeto rodando.
