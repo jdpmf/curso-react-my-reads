@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-const Book = ({book, onUpdateBook, prev}) => {
+const Book = ({book, onUpdateBook, prev, onUpdateShowingBook}) => {
 
-    const path = `/details/${prev}/${book.id}`
+    const path =  `/details/${prev}/${book.id}`
 
     return (
         <div className="book">
@@ -18,7 +18,11 @@ const Book = ({book, onUpdateBook, prev}) => {
                     backgroundImage: `url(${book.imageLinks.smallThumbnail})`
                 }}></div> </Link>
                 <div className="book-shelf-changer">
-                    <select value={book.shelf} onChange={(event) => onUpdateBook(book, event.target.value)}>
+                    <select value={book.shelf} onChange={(event) => {
+                        if(onUpdateShowingBook)
+                            onUpdateShowingBook(book, event.target.value)
+                        onUpdateBook(book, event.target.value)
+                        }}>
                         <option value="none" disabled>Move to...</option>
                         <option value="currentlyReading">Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
@@ -28,7 +32,7 @@ const Book = ({book, onUpdateBook, prev}) => {
                 </div>
             </div>
             <div className="book-title">{book.title}</div>
-            <div className="book-authors">{book.authors.join(', ')}</div>
+            <div className="book-authors">{book.authors ? book.authors.join(', ') : ''}</div>
         </div>
     )
 }
