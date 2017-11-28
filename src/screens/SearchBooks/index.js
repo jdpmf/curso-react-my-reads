@@ -22,8 +22,6 @@ export class SearchBooks extends Component {
 
     updateQuery = (query) => {
 
-        console.log(query)
-
         this.setState({
             query: query
         })
